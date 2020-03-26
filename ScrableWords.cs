@@ -25,7 +25,7 @@ private string[] ScrambleSyllables(int numberOfSyllables)
 
     # THIS FOREACH LOOPS RUNS EVERY TIME A NEW WORD IS PRESENTED TO THE PLAYER
     # DOES THIS SLOW THE GAME DOWN TOO MUCH - COULD SEPARATE THIS TO A SEPARATE METHOD
-    foreach (string syllables in currentList)
+    foreach (string[] syllables in currentList)
         {
         if(syllables.Length == numberOfSyllables)
             {
