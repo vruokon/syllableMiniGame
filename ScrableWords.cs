@@ -1,7 +1,7 @@
-# Class variables:
-# ArrayList wordList - contains the individual wordlists returned by the FileReader
-# ArrayList currentList - contains the current wordlist to use in the game 
-# string result - the word that is the result for question
+// Class variables:
+// ArrayList wordList - contains the individual wordlists returned by the FileReader
+// ArrayList currentList - contains the current wordlist to use in the game 
+// string result - the word that is the result for question
 
 using System;
 using System.Collections;
@@ -9,8 +9,8 @@ using System.Collections;
 private void ChangeWordList()
     {
     
-    #Selects/changes a wordlist (ie. theme) to use for the round
-    # TO ADD HERE: FUNCTIONALITY TO CHECK THAT THE SAME LIST IS NOT CHECKED AGAIN? (if previous list selected, select again)
+    // Selects/changes a wordlist (ie. theme) to use for the round
+    // TO ADD HERE: FUNCTIONALITY TO CHECK THAT THE SAME LIST IS NOT CHECKED AGAIN? (if previous list selected, select again)
     
     Random rnd = new Random();
     int wordListLength = wordList.Count;
@@ -20,11 +20,11 @@ private void ChangeWordList()
 
 private string[] ScrambleSyllables(int numberOfSyllables)
     {
-    #Select all syllable arrays of given (=numberOfSyllables) length from currentList
+    // Select all syllable arrays of given (=numberOfSyllables) length from currentList
     ArrayList givenLengthWords = new ArrayList();
 
-    # THIS FOREACH LOOPS RUNS EVERY TIME A NEW WORD IS PRESENTED TO THE PLAYER
-    # DOES THIS SLOW THE GAME DOWN TOO MUCH - COULD SEPARATE THIS TO A SEPARATE METHOD
+    // THIS FOREACH LOOPS RUNS EVERY TIME A NEW WORD IS PRESENTED TO THE PLAYER
+    // DOES THIS SLOW THE GAME DOWN TOO MUCH - COULD SEPARATE THIS TO A SEPARATE METHOD
     foreach (string[] syllables in currentList)
         {
         if(syllables.Length == numberOfSyllables)
@@ -33,16 +33,16 @@ private string[] ScrambleSyllables(int numberOfSyllables)
         }
     }
 
-    # Choose a random word from the list
+    // Choose a random word from the list
     string[] syllableArray = givenLenghtWords[Random.Range(0, givenLengthWords.Length - 1)];
     
-    # Add the word to the result
+    // Add the word to the result
     foreach(string syllable in syllableArray)
         {
             result += syllable.Trim();
         }
     
-    #Choose a random order for the syllables using Knuth shuffle algorithm
+    // Choose a random order for the syllables using Knuth shuffle algorithm
     for (int t = 0; t < syllableArray.Length; t++ )
         {
             string tmp = syllableArray[t];
