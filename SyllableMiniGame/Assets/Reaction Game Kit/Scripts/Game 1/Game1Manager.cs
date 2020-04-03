@@ -10,6 +10,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FileReader;
 
 public class Game1Manager : MonoBehaviour
 {
@@ -21,6 +22,12 @@ public class Game1Manager : MonoBehaviour
     public Image colorThreeImage;
     public Image colorFourImage;
     public GameObject preventActions;
+    public GameObject category;
+    public GameObject answer;
+    public GameObject text_1;
+    public GameObject text_2;
+    public GameObject text_3;
+    public GameObject text_4;
 
     [Header("Game Over UI")]
     public GameObject gameOverUI;
@@ -35,6 +42,10 @@ public class Game1Manager : MonoBehaviour
 
     //Variables
     private bool gameStarted;
+    private string[] wordLisgByCategory;
+    private string theWord;
+    private string[] scrambledWord;
+    private string[] guessedWord;
     private float currentScore;
     private float currentTime;
     private float timeSinceLastAwnser;
@@ -69,7 +80,17 @@ public class Game1Manager : MonoBehaviour
 
     private void NextRound()
     {
+        answer.GetComponent<UnityEngine.UI.Text>().text = "";
+        var words = new FileReader.Word();
+        words.setListOfWords(words.readFile());
         elaspedTime = 0;
+        wordLisgByCategory = words.getListByCategory(0);
+        do
+        {
+            theWord = wordLisgByCategory[Random.Range(1, wordLisgByCategory.Length)];
+        } while (theWord == "tyhjä" || theWord.Split(' ').Length > 4);
+
+        Debug.Log(theWord);
 
         currentTime = maxTime;
 
@@ -92,6 +113,40 @@ public class Game1Manager : MonoBehaviour
         colorTwoImage.color = randomColors[1];
         colorThreeImage.color = randomColors[2];
         colorFourImage.color = randomColors[3];
+        category.GetComponent<UnityEngine.UI.Text>().text = wordLisgByCategory[0];
+        string[] theWordInList = theWord.Split(' ');
+        guessedWord = new string[theWordInList.Length];
+        for (int t = 0; t < theWordInList.Length; t++)
+        {
+            string tmp = theWordInList[t];
+            int r = Random.Range(t, theWordInList.Length);
+            theWordInList[t] = theWordInList[r];
+            theWordInList[r] = tmp;
+        }
+
+        scrambledWord = new string[theWordInList.Length];
+        scrambledWord = theWordInList;
+        text_1.GetComponent<UnityEngine.UI.Text>().text = theWordInList[0];
+        text_2.GetComponent<UnityEngine.UI.Text>().text = theWordInList[1];
+        if (theWordInList.Length > 2)
+        {
+            text_3.GetComponent<UnityEngine.UI.Text>().text = theWordInList[2];
+        }
+        else
+        {
+            text_3.GetComponent<UnityEngine.UI.Text>().text = " ";
+        }
+
+        if (theWordInList.Length > 3)
+        {
+            text_4.GetComponent<UnityEngine.UI.Text>().text = theWordInList[3];
+        }
+        else
+        {
+            text_4.GetComponent<UnityEngine.UI.Text>().text = " ";
+        }
+
+
     }
 
     private void Timer()
@@ -123,10 +178,17 @@ public class Game1Manager : MonoBehaviour
     public void Awnser(int thisAwnser)
     {
         click.Play();
-        if (thisAwnser == randomColorRight)
-            roundOver = true;
-        else
-            GameOver();
+        int add = guessedWord.Length;
+        Debug.Log(scrambledWord[0]);
+        Debug.Log(scrambledWord[thisAwnser]);
+        answer.GetComponent<UnityEngine.UI.Text>().text += scrambledWord[thisAwnser];
+        Debug.Log(theWord.Replace(" ", "") == answer.GetComponent<UnityEngine.UI.Text>().text);
+        Debug.Log(theWord.Replace(" ", ""));
+        if (theWord.Replace(" ", "").Length == answer.GetComponent<UnityEngine.UI.Text>().text.Length)
+            if (theWord.Replace(" ", "") == answer.GetComponent<UnityEngine.UI.Text>().text)
+                roundOver = true;
+            else
+                GameOver();
     }
 
     private void GameOver()
