@@ -14,6 +14,8 @@ using UnityEngine.UI;
 public class Game1Manager : MonoBehaviour
 {
     [Header("Game UI")]
+    public static string currentWord;
+    public Transform spelledWord;
     public Text scoreText;
     public Image colorMainImage;
     public Image colorOneImage;
@@ -54,6 +56,10 @@ public class Game1Manager : MonoBehaviour
             scoreText.text = currentScore.ToString();
             Timer();
             DelayTimer();
+            spelledWord.GetComponent<Text>().text = currentWord;
+            // Need to bring concatenated word up front on game ui while playing
+            // If you know how to do it, please change the statement under this, it didn't work
+            // spelledWord.SetAsFirstSibling();
         }
     }
 
