@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using UnityEngine;
+
 
 namespace FileReader
 {
@@ -29,6 +31,7 @@ namespace FileReader
             for (var i = 0; i < this.listOfWords.Length; i++)
             {
                 string[] words = this.listOfWords[i].Split(';');
+                Debug.Log(string.Join(" ", words));
                 categoryList[i] = words[num];
             }
             return categoryList;

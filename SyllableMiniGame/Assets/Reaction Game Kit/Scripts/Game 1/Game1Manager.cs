@@ -84,7 +84,7 @@ public class Game1Manager : MonoBehaviour
         var words = new FileReader.Word();
         words.setListOfWords(words.readFile());
         elaspedTime = 0;
-        wordLisgByCategory = words.getListByCategory(0);
+        wordLisgByCategory = words.getListByCategory(Random.Range(0, 4));
         do
         {
             theWord = wordLisgByCategory[Random.Range(1, wordLisgByCategory.Length)];
