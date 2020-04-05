@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 63152852}
   - component: {fileID: 63152854}
   - component: {fileID: 63152853}
+  - component: {fileID: 63152855}
   m_Layer: 5
   m_Name: Text_3
   m_TagString: Untagged
@@ -271,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.16981131, g: 0.16740832, b: 0.16740832, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -298,6 +299,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63152851}
   m_CullTransparentMesh: 0
+--- !u!114 &63152855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63152851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &104298304
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +325,7 @@ GameObject:
   - component: {fileID: 104298305}
   - component: {fileID: 104298307}
   - component: {fileID: 104298306}
+  - component: {fileID: 104298308}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -348,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -366,7 +383,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Sana t\xE4h\xE4n"
+  m_Text: Kategoria
 --- !u!222 &104298307
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -375,6 +392,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104298304}
   m_CullTransparentMesh: 0
+--- !u!114 &104298308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104298304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &183740202
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,10 +601,10 @@ MonoBehaviour:
   scoreToAdd: 10
   delayBetweenRounds: 0.3
   gameColors:
-  - {r: 0.16862746, g: 0.6039216, b: 0.36862746, a: 1}
-  - {r: 0.16862746, g: 0.3529412, b: 0.6039216, a: 1}
-  - {r: 0.6039216, g: 0.16862746, b: 0.16862746, a: 1}
-  - {r: 0.6039216, g: 0.41033125, b: 0.16862744, a: 1}
+  - {r: 0.21698113, g: 0.8679245, b: 0.47925428, a: 0.68235296}
+  - {r: 0.023584902, g: 0.7371713, b: 1, a: 0.6862745}
+  - {r: 0.9150943, g: 0.23740657, b: 0.2928149, a: 0.68235296}
+  - {r: 0.9433962, g: 0.8896103, b: 0.07564971, a: 0.68235296}
   maxTime: 20
   click: {fileID: 681262721}
 --- !u!114 &291456390
@@ -957,7 +989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectColor: {r: 0.4627451, g: 0.4627451, b: 0.4627451, a: 0.36078432}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
 --- !u!114 &784829954
@@ -1225,7 +1257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectColor: {r: 0.4627451, g: 0.4627451, b: 0.4627451, a: 0.34901962}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
 --- !u!114 &893286974
@@ -1386,7 +1418,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tavu peli
+  m_Text: Tavupeli
 --- !u!222 &990328617
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1658,6 +1690,7 @@ GameObject:
   - component: {fileID: 1194241361}
   - component: {fileID: 1194241363}
   - component: {fileID: 1194241362}
+  - component: {fileID: 1194241364}
   m_Layer: 5
   m_Name: Text_1
   m_TagString: Untagged
@@ -1724,6 +1757,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194241360}
   m_CullTransparentMesh: 0
+--- !u!114 &1194241364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194241360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 0
 --- !u!1 &1255758370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,7 +2095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectColor: {r: 0.4627451, g: 0.4627451, b: 0.4627451, a: 0.3529412}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
 --- !u!114 &1431919201
@@ -2192,7 +2240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectColor: {r: 0.4627451, g: 0.4627451, b: 0.4627451, a: 0.74509805}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
 --- !u!114 &1454235516
@@ -2296,6 +2344,7 @@ GameObject:
   - component: {fileID: 1462707472}
   - component: {fileID: 1462707474}
   - component: {fileID: 1462707473}
+  - component: {fileID: 1462707475}
   m_Layer: 5
   m_Name: Text_3
   m_TagString: Untagged
@@ -2362,6 +2411,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462707471}
   m_CullTransparentMesh: 0
+--- !u!114 &1462707475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462707471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1573802220
 GameObject:
   m_ObjectHideFlags: 0
@@ -2618,7 +2682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2653,7 +2717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectColor: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 0.35686275}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
 --- !u!1 &1780024247
@@ -2857,6 +2921,7 @@ GameObject:
   - component: {fileID: 1929251173}
   - component: {fileID: 1929251175}
   - component: {fileID: 1929251174}
+  - component: {fileID: 1929251176}
   m_Layer: 5
   m_Name: Text_2
   m_TagString: Untagged
@@ -2923,6 +2988,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929251172}
   m_CullTransparentMesh: 0
+--- !u!114 &1929251176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929251172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2013525079
 GameObject:
   m_ObjectHideFlags: 0
