@@ -190,16 +190,29 @@ public class Game1Manager : MonoBehaviour
     {
         click.Play();
         int add = guessedWord.Length;
-        Debug.Log(scrambledWord[0]);
-        Debug.Log(scrambledWord[thisAwnser]);
         answer.GetComponent<UnityEngine.UI.Text>().text += scrambledWord[thisAwnser];
-        Debug.Log(theWord.Replace(" ", "") == answer.GetComponent<UnityEngine.UI.Text>().text);
-        Debug.Log(theWord.Replace(" ", ""));
         if (theWord.Replace(" ", "").Length <= answer.GetComponent<UnityEngine.UI.Text>().text.Length)
             if (theWord.Replace(" ", "") == answer.GetComponent<UnityEngine.UI.Text>().text)
                 roundOver = true;
             else
                 GameOver();
+    }
+    public void deleteAwnser()
+    {
+        answer.GetComponent<UnityEngine.UI.Text>().text = "";
+        Debug.Log(scrambledWord.Length);
+        button_1.SetActive(true);
+        button_2.SetActive(true);
+        if (scrambledWord.Length > 2)
+        {
+            button_3.SetActive(true);
+
+        }
+        if (scrambledWord.Length > 3)
+        {
+            button_4.SetActive(true);
+
+        }
     }
 
     private void GameOver()
