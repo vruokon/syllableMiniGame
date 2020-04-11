@@ -28,6 +28,10 @@ public class Game1Manager : MonoBehaviour
     public GameObject text_2;
     public GameObject text_3;
     public GameObject text_4;
+    public GameObject button_1;
+    public GameObject button_2;
+    public GameObject button_3;
+    public GameObject button_4;
 
     [Header("Game Over UI")]
     public GameObject gameOverUI;
@@ -109,6 +113,10 @@ public class Game1Manager : MonoBehaviour
         randomColorRight = Random.Range(0, 4);
 
         colorMainImage.color = randomColors[randomColorRight];
+        button_1.SetActive(true);
+        button_2.SetActive(true);
+        button_3.SetActive(true);
+        button_4.SetActive(true);
         colorOneImage.color = randomColors[0];
         colorTwoImage.color = randomColors[1];
         colorThreeImage.color = randomColors[2];
@@ -135,6 +143,8 @@ public class Game1Manager : MonoBehaviour
         else
         {
             text_3.GetComponent<UnityEngine.UI.Text>().text = " ";
+            button_3.SetActive(false);
+
         }
 
         if (theWordInList.Length > 3)
@@ -144,6 +154,7 @@ public class Game1Manager : MonoBehaviour
         else
         {
             text_4.GetComponent<UnityEngine.UI.Text>().text = " ";
+            button_4.SetActive(false);
         }
 
 
@@ -184,7 +195,7 @@ public class Game1Manager : MonoBehaviour
         answer.GetComponent<UnityEngine.UI.Text>().text += scrambledWord[thisAwnser];
         Debug.Log(theWord.Replace(" ", "") == answer.GetComponent<UnityEngine.UI.Text>().text);
         Debug.Log(theWord.Replace(" ", ""));
-        if (theWord.Replace(" ", "").Length == answer.GetComponent<UnityEngine.UI.Text>().text.Length)
+        if (theWord.Replace(" ", "").Length <= answer.GetComponent<UnityEngine.UI.Text>().text.Length)
             if (theWord.Replace(" ", "") == answer.GetComponent<UnityEngine.UI.Text>().text)
                 roundOver = true;
             else
