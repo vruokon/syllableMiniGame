@@ -36,6 +36,7 @@ public class Game1Manager : MonoBehaviour
     public GameObject button_2;
     public GameObject button_3;
     public GameObject button_4;
+    public Text time;
 
     [Header("Game Over UI")]
     public GameObject gameOverUI;
@@ -75,6 +76,8 @@ public class Game1Manager : MonoBehaviour
             scoreText.text = currentScore.ToString();
             Timer();
             DelayTimer();
+            int aika = (int)currentTime;
+            time.GetComponent<UnityEngine.UI.Text>().text = aika.ToString();
         }
     }
 
@@ -87,6 +90,7 @@ public class Game1Manager : MonoBehaviour
         timeSinceLastAwnser = 0;
         roundOver = false;
         gameStarted = true;
+        currentTime = maxTime;
         NextRound();
     }
 
@@ -101,10 +105,6 @@ public class Game1Manager : MonoBehaviour
         {
             theWord = wordLisgByCategory[Random.Range(1, wordLisgByCategory.Length)];
         } while (theWord == "tyhjä" || theWord.Split(' ').Length > 4);
-
-        Debug.Log(theWord);
-
-        currentTime = maxTime;
 
         List<Color> randomColors = new List<Color>();
         randomColors = gameColors;
@@ -205,9 +205,15 @@ public class Game1Manager : MonoBehaviour
         answer.GetComponent<UnityEngine.UI.Text>().text += scrambledWord[thisAwnser];
         if (theWord.Replace(" ", "").Length <= answer.GetComponent<UnityEngine.UI.Text>().text.Length)
             if (theWord.Replace(" ", "") == answer.GetComponent<UnityEngine.UI.Text>().text)
+            {
+                currentTime += 5;
                 roundOver = true;
+            }
             else
-                GameOver();
+            {
+                currentTime -= 5;
+                roundOver = true;
+            }
     }
     public void deleteAwnser()
     {

@@ -202,8 +202,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 291456388}
-        m_MethodName: _ReturnToMainMenu
+      - m_Target: {fileID: 291456389}
+        m_MethodName: backToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -560,6 +560,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183740202}
   m_CullTransparentMesh: 0
+--- !u!1 &194454633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 194454636}
+  - component: {fileID: 194454635}
+  - component: {fileID: 194454634}
+  m_Layer: 5
+  m_Name: Time_in_text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &194454634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194454633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 5bf34a74454d53f44928225096e60698, type: 3}
+    m_FontSize: 80
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Aika: '
+--- !u!222 &194454635
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194454633}
+  m_CullTransparentMesh: 0
+--- !u!224 &194454636
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194454633}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1573802221}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.3263889, y: 0.1}
+  m_AnchorMax: {x: 0.6736111, y: 0.9}
+  m_AnchoredPosition: {x: 80, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &280522579
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +756,7 @@ MonoBehaviour:
   button_2: {fileID: 893286971}
   button_3: {fileID: 1454235513}
   button_4: {fileID: 1431919198}
+  time: {fileID: 194454634}
   gameOverUI: {fileID: 1635871530}
   gameOverScore: {fileID: 2128312993}
   scoreToAdd: 10
@@ -1567,15 +1645,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Pelin tarkoituksena onker\xE4t\xE4 pisteit\xE4liitt\xE4m\xE4ll\xE4ruudullan\xE4kyvi\xE4tavujakokonaisiksisanoiksi.
-    T\xE4m\xE4 tapahtuu painamalla vuorotellen jokaistaruudun alaosassa annettua
-    tavua oikeassa j\xE4rjestyksess\xE4.Jokaisesta oikeasta vastauksesta saa 10 pistett\xE4.Ruudun
-    yl\xE4osassa n\xE4kyv\xE4t yhteen liitetyt tavut sek\xE4 kategoria, jota annettu
-    sana vastaa. Kategorioita ovat: lemmikit, uskonto, ruoat, kielet, harrastukset
-    sek\xE4 lasten tavarat.Tavut t\xE4ytyy muodostaa aikarajaan menness\xE4, muuten
-    peli p\xE4\xE4ttyy. Mik\xE4li pelaaja painoi v\xE4\xE4r\xE4\xE4 tavua,valinnat
-    voi nollatax-napista.Pisteet n\xE4kyv\xE4t ruudun oikeassa yl\xE4kulmassaja vasemman
-    yl\xE4kulman nuolesta p\xE4\xE4see takaisin p\xE4\xE4valikkoon."
+  m_Text: "Pelin tarkoituksena on ker\xE4t\xE4 pisteit\xE4 liitt\xE4m\xE4ll\xE4 ruudulla
+    n\xE4kyvi\xE4 tavuja kokonaisiksi sanoiksi. T\xE4m\xE4 tapahtuu klikkaamalla
+    vuorotellen jokaistaruudun alaosassa annettua tavua oikeassa j\xE4rjestyksess\xE4.Jokaisesta
+    oikeasta vastauksesta saa 10 pistett\xE4 ja 5 sekuntia lis\xE4\xE4 aikaa. V\xE4\xE4r\xE4st\xE4
+    vastauksesta v\xE4hennet\xE4\xE4n ajasta 5 sekuntia. Ruudun yl\xE4osassa n\xE4kyv\xE4t
+    yhteen liitetyt tavut sek\xE4 kategoria, jota annettu sana vastaa. Kategorioita
+    ovat: lemmikit, uskonto, ruoat, kielet, harrastukset sek\xE4 lasten tavarat.Tavut
+    t\xE4ytyy muodostaa aikarajaan menness\xE4, muuten peli p\xE4\xE4ttyy. Mik\xE4li
+    pelaaja painoi v\xE4\xE4r\xE4\xE4 tavua,valinnat voi nollatax-napista. Pisteet
+    n\xE4kyv\xE4t ruudun oikeassa yl\xE4kulmassaja vasemman yl\xE4kulman nuolesta
+    p\xE4\xE4see takaisin p\xE4\xE4valikkoon. Peli loppuu, kun aika on loppu."
 --- !u!222 &837457996
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1805,7 +1885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3263889, y: 0.1}
   m_AnchorMax: {x: 0.6736111, y: 0.9}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -225, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &990328616
@@ -1839,7 +1919,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tavupeli
+  m_Text: 'Aika: '
 --- !u!222 &990328617
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3003,6 +3083,7 @@ RectTransform:
   - {fileID: 1255758371}
   - {fileID: 990328615}
   - {fileID: 1005355898}
+  - {fileID: 194454636}
   m_Father: {fileID: 1050473159}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
