@@ -460,12 +460,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b1eecac378d80a04f932decccce58a82, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -978,7 +978,7 @@ MonoBehaviour:
   - {r: 0.023584902, g: 0.7371713, b: 1, a: 0.6862745}
   - {r: 0.9150943, g: 0.23740657, b: 0.2928149, a: 0.68235296}
   - {r: 0.9433962, g: 0.8896103, b: 0.07564971, a: 0.68235296}
-  maxTime: 20
+  maxTime: 60
   click: {fileID: 681262721}
 --- !u!114 &291456390
 MonoBehaviour:
@@ -1897,8 +1897,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15277778, y: 0.73398435}
   m_AnchorMax: {x: 0.8472222, y: 0.81289065}
-  m_AnchoredPosition: {x: 0, y: -358.4}
-  m_SizeDelta: {x: 0, y: 716.8}
+  m_AnchoredPosition: {x: 0, y: -344.39}
+  m_SizeDelta: {x: 0, y: 1016.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &837457995
 MonoBehaviour:
@@ -1932,16 +1932,14 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Pelin tarkoituksena on ker\xE4t\xE4 pisteit\xE4 liitt\xE4m\xE4ll\xE4 ruudulla
-    n\xE4kyvi\xE4 tavuja kokonaisiksi sanoiksi. T\xE4m\xE4 tapahtuu klikkaamalla
-    vuorotellen jokaistaruudun alaosassa annettua tavua oikeassa j\xE4rjestyksess\xE4.Jokaisesta
-    oikeasta vastauksesta saa 10 pistett\xE4 ja 5 sekuntia lis\xE4\xE4 aikaa. V\xE4\xE4r\xE4st\xE4
-    vastauksesta v\xE4hennet\xE4\xE4n ajasta 5 sekuntia. Ruudun yl\xE4osassa n\xE4kyv\xE4t
-    yhteen liitetyt tavut sek\xE4 kategoria, jota annettu sana vastaa. Kategorioita
-    ovat: lemmikit, uskonto, ruoat, kielet, harrastukset sek\xE4 lasten tavarat.Tavut
-    t\xE4ytyy muodostaa aikarajaan menness\xE4, muuten peli p\xE4\xE4ttyy. Mik\xE4li
-    pelaaja painoi v\xE4\xE4r\xE4\xE4 tavua,valinnat voi nollatax-napista. Pisteet
-    n\xE4kyv\xE4t ruudun oikeassa yl\xE4kulmassaja vasemman yl\xE4kulman nuolesta
-    p\xE4\xE4see takaisin p\xE4\xE4valikkoon. Peli loppuu, kun aika on loppu."
+    n\xE4kyvi\xE4 tavuja kokonaisiksi sanoiksi. T\xE4m\xE4 tapahtuu valitsemalla
+    tavut oikeassa j\xE4rjestyksess\xE4.\n\nOikeasta vastauksesta saat 10 pistett\xE4
+    sek\xE4 2 sekuntia lis\xE4\xE4 aikaa. V\xE4\xE4r\xE4st\xE4 vastauksesta menet\xE4t
+    10 sekuntia.\n\nValkoiseen laatikkoon yhdistyy tavut valitsemassasi j\xE4rjestyksess\xE4.
+    Sanaan liittyv\xE4 kategoria n\xE4kyy valkoisen laatikon yl\xE4puolella. \n\nMik\xE4li
+    painoit v\xE4\xE4r\xE4\xE4 tavua, valinnat voi nollata X-napista. \n\nPisteet
+    n\xE4kyv\xE4t ruudun oikeassa yl\xE4kulmassa.\nVasemman yl\xE4kulman nuolesta
+    p\xE4\xE4see takaisin p\xE4\xE4valikkoon. \n\nPeli loppuu, kun aika on loppu."
 --- !u!222 &837457996
 CanvasRenderer:
   m_ObjectHideFlags: 0
