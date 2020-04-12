@@ -41,6 +41,8 @@ public class Game1Manager : MonoBehaviour
     [Header("Game Over UI")]
     public GameObject gameOverUI;
     public Text gameOverScore;
+    public GameObject answerTexts;
+
 
     [Header("Game Variables")]
     public float scoreToAdd;
@@ -61,12 +63,16 @@ public class Game1Manager : MonoBehaviour
     private float elaspedTime;
     private int randomColorRight;
     private bool roundOver;
+    private string rightAnswers;
+    private string wrongAnswers;
+    private int round;
 
     private void Start()
     {
         gameOverUI.SetActive(false);
         gameui.SetActive(false);
         startscreen.SetActive(true);
+        round = 0;
     }
 
     private void Update()
@@ -96,6 +102,7 @@ public class Game1Manager : MonoBehaviour
 
     private void NextRound()
     {
+        round++;
         answer.GetComponent<UnityEngine.UI.Text>().text = "";
         var words = new FileReader.Word();
         words.setListOfWords(words.readFile());
@@ -206,11 +213,13 @@ public class Game1Manager : MonoBehaviour
         if (theWord.Replace(" ", "").Length <= answer.GetComponent<UnityEngine.UI.Text>().text.Length)
             if (theWord.Replace(" ", "") == answer.GetComponent<UnityEngine.UI.Text>().text)
             {
+                rightAnswers += "+ " + theWord.Replace(" ", "") + "\n";
                 currentTime += 5;
                 roundOver = true;
             }
             else
             {
+                wrongAnswers += "- " + theWord.Replace(" ", "") + "\n";
                 currentTime -= 5;
                 roundOver = true;
             }
@@ -239,5 +248,9 @@ public class Game1Manager : MonoBehaviour
         roundOver = false;
         gameOverUI.SetActive(true);
         gameOverScore.text = "Pisteet: " + currentScore.ToString();
+        answerTexts.GetComponent<UnityEngine.UI.Text>().text = "Oikein vastatut:\n\n";
+        answerTexts.GetComponent<UnityEngine.UI.Text>().text += rightAnswers + "\n\n";
+        answerTexts.GetComponent<UnityEngine.UI.Text>().text += "Väärin vastatut:\n\n";
+        answerTexts.GetComponent<UnityEngine.UI.Text>().text += wrongAnswers;
     }
 }
