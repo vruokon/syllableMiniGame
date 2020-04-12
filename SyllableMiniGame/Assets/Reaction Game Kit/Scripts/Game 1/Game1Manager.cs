@@ -50,6 +50,8 @@ public class Game1Manager : MonoBehaviour
     public List<Color> gameColors;
     public float maxTime;
     public AudioSource click;
+    public float minusTimeOnWrong;
+    public float plusTimeOnRight;
 
     //Variables
     private bool gameStarted;
@@ -63,8 +65,7 @@ public class Game1Manager : MonoBehaviour
     private float elaspedTime;
     private int randomColorRight;
     private bool roundOver;
-    private string rightAnswers;
-    private string wrongAnswers;
+    private string playerAnswers;
     private int round;
 
     private void Start()
@@ -213,14 +214,14 @@ public class Game1Manager : MonoBehaviour
         if (theWord.Replace(" ", "").Length <= answer.GetComponent<UnityEngine.UI.Text>().text.Length)
             if (theWord.Replace(" ", "") == answer.GetComponent<UnityEngine.UI.Text>().text)
             {
-                rightAnswers += "+ " + theWord.Replace(" ", "") + "\n";
-                currentTime += 5;
+                playerAnswers += "\u2713 " + theWord.Replace(" ", "") + "\n";
+                currentTime += plusTimeOnRight;
                 roundOver = true;
             }
             else
             {
-                wrongAnswers += "- " + theWord.Replace(" ", "") + "\n";
-                currentTime -= 5;
+                playerAnswers += "\u2717 " + theWord.Replace(" ", "") + "\n";
+                currentTime -= minusTimeOnWrong;
                 roundOver = true;
             }
     }
@@ -248,9 +249,7 @@ public class Game1Manager : MonoBehaviour
         roundOver = false;
         gameOverUI.SetActive(true);
         gameOverScore.text = "Pisteet: " + currentScore.ToString();
-        answerTexts.GetComponent<UnityEngine.UI.Text>().text = "Oikein vastatut:\n\n";
-        answerTexts.GetComponent<UnityEngine.UI.Text>().text += rightAnswers + "\n\n";
-        answerTexts.GetComponent<UnityEngine.UI.Text>().text += "Väärin vastatut:\n\n";
-        answerTexts.GetComponent<UnityEngine.UI.Text>().text += wrongAnswers;
+        answerTexts.GetComponent<UnityEngine.UI.Text>().text = "\nVastaukset:\n\n";
+        answerTexts.GetComponent<UnityEngine.UI.Text>().text += playerAnswers;
     }
 }

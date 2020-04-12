@@ -980,6 +980,8 @@ MonoBehaviour:
   - {r: 0.9433962, g: 0.8896103, b: 0.07564971, a: 0.68235296}
   maxTime: 60
   click: {fileID: 681262721}
+  minusTimeOnWrong: 10
+  plusTimeOnRight: 2
 --- !u!114 &291456390
 MonoBehaviour:
   m_ObjectHideFlags: 0
