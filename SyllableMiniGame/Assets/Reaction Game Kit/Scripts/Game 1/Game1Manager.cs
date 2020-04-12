@@ -14,7 +14,11 @@ using FileReader;
 
 public class Game1Manager : MonoBehaviour
 {
+    [Header("Startscreen Ui")]
+    public GameObject startscreen;
+
     [Header("Game UI")]
+    public GameObject gameui;
     public Text scoreText;
     public Image colorMainImage;
     public Image colorOneImage;
@@ -59,7 +63,9 @@ public class Game1Manager : MonoBehaviour
 
     private void Start()
     {
-        StartGame();
+        gameOverUI.SetActive(false);
+        gameui.SetActive(false);
+        startscreen.SetActive(true);
     }
 
     private void Update()
@@ -75,6 +81,8 @@ public class Game1Manager : MonoBehaviour
     public void StartGame()
     {
         gameOverUI.SetActive(false);
+        startscreen.SetActive(false);
+        gameui.SetActive(true);
         currentScore = 0;
         timeSinceLastAwnser = 0;
         roundOver = false;
@@ -169,6 +177,10 @@ public class Game1Manager : MonoBehaviour
                 GameOver();
         }
     }
+    public void backToMainMenu()
+    {
+        Start();
+    }
 
     private void DelayTimer()
     {
@@ -220,6 +232,6 @@ public class Game1Manager : MonoBehaviour
         gameStarted = false;
         roundOver = false;
         gameOverUI.SetActive(true);
-        gameOverScore.text = "Score: " + currentScore.ToString();
+        gameOverScore.text = "Pisteet: " + currentScore.ToString();
     }
 }
