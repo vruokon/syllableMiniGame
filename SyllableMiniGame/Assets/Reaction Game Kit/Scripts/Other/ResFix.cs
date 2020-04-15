@@ -14,7 +14,7 @@ public class ResFix : MonoBehaviour
 #if UNITY_STANDALONE
     private void Awake()
     {
-        Screen.SetResolution(410, 656, false);
+        Screen.SetResolution(1024, 768, false);
     }
 #endif
 }
